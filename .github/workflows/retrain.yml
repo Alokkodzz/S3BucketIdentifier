@@ -3,7 +3,7 @@ name: Retrain ML Model
 on:
   workflow_dispatch:
   schedule:
-    - cron: "2 * * * *"   # Weekly
+    - cron: "/3 * * * *"   # Weekly
 
 jobs:
   retrain:
