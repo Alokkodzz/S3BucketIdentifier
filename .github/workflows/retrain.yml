@@ -2,6 +2,7 @@ name: Retrain ML Model
 
 on:
   push:
+    branches: [main]
     paths:
       - "ml/dataset.csv"
 
@@ -49,6 +50,6 @@ jobs:
         run: |
           git config --global user.name "ml-bot"
           git config --global user.email "ml-bot@example.com"
-          git add dataset.csv
+          git add .
           git commit -m "Auto retrained model" || echo "No changes"
           git push
