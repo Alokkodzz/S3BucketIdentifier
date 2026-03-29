@@ -37,8 +37,8 @@ jobs:
 
       - name: Upload model to S3
         run: |
-          aws s3 cp model/model.joblib s3://ml-model-bucket/model.joblib
-          aws s3 cp model/vectorizer.joblib s3://ml-model-bucket/vectorizer.joblib
+          aws s3 cp model/model.joblib s3://ml-model-bucket-alok/model.joblib
+          aws s3 cp model/vectorizer.joblib s3://ml-model-bucket-alok/vectorizer.joblib
 
       - name: Remove the model
         run: |
