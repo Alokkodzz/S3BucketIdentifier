@@ -45,11 +45,3 @@ jobs:
         run: |
           rm -rf model/model.joblib
           rm -rf model/vectorizer.joblib
-
-      - name: Commit Updated Model
-        run: |
-          git config --global user.name "ml-bot"
-          git config --global user.email "ml-bot@example.com"
-          git add .
-          git commit -m "Auto retrained model" || echo "No changes"
-          git push
