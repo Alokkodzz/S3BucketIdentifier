@@ -27,18 +27,18 @@ jobs:
 
       - name: Upload model to S3
         run: |
-          aws s3 cp terraform/modules/lambda/model.joblib s3://ml-model-bucket/model.joblib
-          aws s3 cp terraform/modules/lambda/vectorizer.joblib s3://ml-model-bucket/vectorizer.joblib
+          aws s3 cp model/model.joblib s3://ml-model-bucket/model.joblib
+          aws s3 cp model/vectorizer.joblib s3://ml-model-bucket/vectorizer.joblib
 
       - name: Remove the model
         run: |
-          rm -rf terraform/modules/lambda/model.joblib
-          rm -rf terraform/modules/lambda/vectorizer.joblib
+          rm -rf model/model.joblib
+          rm -rf model/vectorizer.joblib
 
       - name: Commit Updated Model
         run: |
           git config --global user.name "ml-bot"
           git config --global user.email "ml-bot@example.com"
-          git add terraform/modules/lambda/model.joblib terraform/modules/lambda/vectorizer.joblib
+          git add dataset.csv
           git commit -m "Auto retrained model" || echo "No changes"
           git push
