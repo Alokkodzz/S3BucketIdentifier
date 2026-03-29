@@ -1,0 +1,39 @@
+name: Retrain ML Model
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 2 * * 0"   # Weekly
+
+jobs:
+  retrain:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+
+      - name: Install Dependencies
+        run: |
+          pip install pandas scikit-learn joblib
+
+      - name: Retrain Model
+        run: |
+          cd ml
+          python train.py
+
+      - name: Upload model to S3
+        run: |
+          aws s3 cp lambda/model.joblib s3://ml-model-bucket/model.joblib
+          aws s3 cp lambda/vectorizer.joblib s3://ml-model-bucket/vectorizer.joblib
+
+      ##- name: Commit Updated Model
+      ##  run: |
+      ##    git config --global user.name "ml-bot"
+      ##    git config --global user.email "ml-bot@example.com"
+      ##    git add lambda/model.joblib lambda/vectorizer.joblib
+      ##    git commit -m "Auto retrained model" || echo "No changes"
+      ##    git push
