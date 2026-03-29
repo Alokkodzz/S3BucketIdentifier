@@ -18,13 +18,16 @@ resource "aws_sqs_queue_policy" "allow_s3" {
     Version = "2012-10-17",
     Statement = [
       {
+        Sid = "AllowS3SendMessage",
         Effect = "Allow",
-        Principal = "*",
+        Principal = {
+          Service = "s3.amazonaws.com"
+        },
         Action = "sqs:SendMessage",
         Resource = aws_sqs_queue.main.arn,
         Condition = {
-          ArnEquals = {
-            "aws:SourceArn" = "*"
+          ArnLike = {
+            "aws:SourceArn" = "arn:aws:s3:::ml-file-router-source"
           }
         }
       }
