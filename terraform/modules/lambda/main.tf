@@ -5,8 +5,8 @@ variable "source_bucket" {}
 
 data "archive_file" "python_lambda_package" {  
   type = "zip"  
-  source_file = "${path.module}/lambda_function.py" 
-  output_path = "${path.module}/s3_BucketIdentifier.zip"
+  source_file = "${path.module}/python/lambda_function.py" 
+  output_path = "${path.module}/python/s3_BucketIdentifier.zip"
 }
 
 resource "aws_lambda_function" "router" {
@@ -15,10 +15,10 @@ resource "aws_lambda_function" "router" {
   handler       = "lambda_function.lambda_handler"
   runtime       = "python3.10"
 
-  filename         = "${path.module}/s3_BucketIdentifier.zip"
-  source_code_hash = filebase64sha256("${path.module}/s3_BucketIdentifier.zip")
+  filename         = "${path.module}/python/s3_BucketIdentifier.zip"
+  source_code_hash = filebase64sha256("${path.module}/python/s3_BucketIdentifier.zip")
 
-  timeout = 30
+  timeout = 120
 }
 
 resource "aws_lambda_event_source_mapping" "sqs_trigger" {
