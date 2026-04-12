@@ -17,8 +17,7 @@ jobs:
        
       - name: Change directory
         run: |
-          ls -la
-          pushd terraform/modules/lambda/python/ 
+          cd terraform/modules/lambda/python/ 
 
       - name: Build Docker Image
         run: docker build --no-cache --progress=plain -t ml-file-router . 
