@@ -1,5 +1,6 @@
 FROM public.ecr.aws/lambda/python:3.10
 
+COPY . .
 RUN ls -la
 
 # Install dependencies
