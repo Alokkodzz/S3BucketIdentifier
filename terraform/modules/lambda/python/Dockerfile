@@ -1,7 +1,7 @@
 FROM public.ecr.aws/lambda/python:3.10
 
 # Install dependencies
-COPY terraform/modules/lambda/python/requirements.txt .
+COPY /terraform/modules/lambda/python/requirements.txt .
 RUN pip install -r requirements.txt
 
 # Copy app code
