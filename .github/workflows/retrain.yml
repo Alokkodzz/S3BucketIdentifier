@@ -40,8 +40,3 @@ jobs:
         run: |
           aws s3 cp model/model.joblib s3://ml-model-bucket-alok/model.joblib
           aws s3 cp model/vectorizer.joblib s3://ml-model-bucket-alok/vectorizer.joblib
-
-      - name: Remove the model
-        run: |
-          rm -rf model/model.joblib
-          rm -rf model/vectorizer.joblib
