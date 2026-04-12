@@ -15,8 +15,11 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
        
+      - name: Change directory
+        run: pushd terraform/modules/lambda/python/
+
       - name: Build Docker Image
-        run: docker build --no-cache --progress=plain -t ml-file-router terraform/modules/lambda/python/
+        run: docker build --no-cache --progress=plain -t ml-file-router .
 
       - name: Tag Image
         run: docker tag ml-file-router:latest ${{ secrets.ECR_URI }}:latest
