@@ -10,6 +10,7 @@ env:
 jobs:
   buildpush:
     runs-on: ubuntu-latest
+    #working-directory: terraform/modules/lambda/python
 
     steps:
       - name: Checkout Code
@@ -23,18 +24,20 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: Build Docker Image
-        working-directory: terraform/modules/lambda/python
-        run: docker build --no-cache --progress=plain -t ml-file-router . 
+        run: |
+          docker build --no-cache --progress=plain \
+            -f terraform/modules/lambda/python/Dockerfile \
+            -t ml-file-router \
+            terraform/modules/lambda/python 
 
       - name: Tag Image
-        working-directory: terraform/modules/lambda/python
         run: docker tag ml-file-router:latest ${{ secrets.ECR_URI }}:latest
 
       - name: Push to ECR
-        working-directory: terraform/modules/lambda/python
         run: docker push ${{ secrets.ECR_URI }}:latest
         
   deploy:
+    needs: buildpush
     runs-on: ubuntu-latest
 
     steps:
