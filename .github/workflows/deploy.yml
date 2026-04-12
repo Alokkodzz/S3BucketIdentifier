@@ -14,19 +14,17 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3
-       
-      - name: Change directory
-        run: |
-          cd terraform/modules/lambda/python/ 
-          ls -la
 
       - name: Build Docker Image
+        working-directory: terraform/modules/lambda/python
         run: docker build --no-cache --progress=plain -t ml-file-router . 
 
       - name: Tag Image
+        working-directory: terraform/modules/lambda/python
         run: docker tag ml-file-router:latest ${{ secrets.ECR_URI }}:latest
 
       - name: Push to ECR
+        working-directory: terraform/modules/lambda/python
         run: docker push ${{ secrets.ECR_URI }}:latest
         
   deploy:
