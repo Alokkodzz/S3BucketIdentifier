@@ -4,7 +4,7 @@ import os
 
 s3 = boto3.client('s3')
 
-MODEL_BUCKET = "ml-model-bucket"
+MODEL_BUCKET = "ml-model-bucket-alok"
 
 def download_model():
     if not os.path.exists("/tmp/model.joblib"):

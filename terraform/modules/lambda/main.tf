@@ -3,20 +3,18 @@ variable "queue_arn" {}
 variable "source_bucket" {}
 
 
-data "archive_file" "python_lambda_package" {  
-  type = "zip"  
-  source_file = "${path.module}/python/lambda_function.py" 
-  output_path = "${path.module}/python/s3_BucketIdentifier.zip"
-}
+//data "archive_file" "python_lambda_package" {  
+//  type = "zip"  
+//  source_file = "${path.module}/python/lambda_function.py" 
+//  output_path = "${path.module}/python/s3_BucketIdentifier.zip"
+//}
 
 resource "aws_lambda_function" "router" {
   function_name = "ml-file-router"
   role          = var.lambda_role_arn
-  handler       = "lambda_function.lambda_handler"
-  runtime       = "python3.10"
+  package_type  = "Image"
 
-  filename         = "${path.module}/python/s3_BucketIdentifier.zip"
-  source_code_hash = filebase64sha256("${path.module}/python/s3_BucketIdentifier.zip")
+  image_uri = "736395454781.dkr.ecr.ap-south-1.amazonaws.com/ml-file-router:latest"
 
   timeout = 120
 }
