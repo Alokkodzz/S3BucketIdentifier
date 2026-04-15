@@ -13,9 +13,7 @@ resource "aws_lambda_function" "router" {
   function_name = "ml-file-router"
   role          = var.lambda_role_arn
   package_type  = "Image"
-
   image_uri = "736395454781.dkr.ecr.ap-south-1.amazonaws.com/ml-file-router:latest"
-
   timeout = 120
 }
 
