@@ -1,9 +1,11 @@
 resource "aws_sqs_queue" "dlq" {
   name = "ml-router-dlq"
+  visibility_timeout_seconds = 180
 }
 
 resource "aws_sqs_queue" "main" {
   name = "ml-router-queue"
+  visibility_timeout_seconds = 180
 
   redrive_policy = jsonencode({
     deadLetterTargetArn = aws_sqs_queue.dlq.arn
