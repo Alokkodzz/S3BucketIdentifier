@@ -1,0 +1,53 @@
+timestamp,message
+1776268424319,"/var/lang/lib/python3.10/site-packages/joblib/_multiprocessing_helpers.py:44: UserWarning: [Errno 13] Permission denied.  joblib will operate in serial mode
+"
+1776268424319,"warnings.warn(""%s.  joblib will operate in serial mode"" % (e,))
+"
+1776268426391,"/var/lang/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.8.0 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+"
+1776268426391,"https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+"
+1776268426391,"warnings.warn(
+"
+1776268426397,"/var/lang/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.8.0 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+"
+1776268426397,"https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+"
+1776268426397,"warnings.warn(
+"
+1776268426399,"/var/lang/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.8.0 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+"
+1776268426399,"https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+"
+1776268426399,"warnings.warn(
+"
+1776268426414,"START RequestId: 15a68a27-198c-5795-8b41-e87eaf3a537d Version: $LATEST
+"
+1776268426414,"Processing file: 199999993333_NA5323332333.rbackup from ml-file-router-source
+"
+1776268426474,"[ERROR] AttributeError: 'LogisticRegression' object has no attribute 'multi_class'Traceback (most recent call last):  File ""/var/task/lambda_function.py"", line 43, in lambda_handler    bucket, confidence = predict_bucket(key)  File ""/var/task/lambda_function.py"", line 24, in predict_bucket    probs = model.predict_proba(X)[0]  File ""/var/lang/lib/python3.10/site-packages/sklearn/linear_model/_logistic.py"", line 1457, in predict_proba    ovr = self.multi_class in [""ovr"", ""warn""] or (
+"
+1776268426476,"END RequestId: 15a68a27-198c-5795-8b41-e87eaf3a537d
+"
+1776268426477,"REPORT RequestId: 15a68a27-198c-5795-8b41-e87eaf3a537d	Duration: 62.48 ms	Billed Duration: 2591 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	Init Duration: 2528.39 ms	
+"
+1776268603450,"START RequestId: df30a65d-4b22-54b5-9cf5-c404fc538904 Version: $LATEST
+"
+1776268603453,"Processing file: 199999993333_NA5323332333.rbackup from ml-file-router-source
+"
+1776268603454,"[ERROR] AttributeError: 'LogisticRegression' object has no attribute 'multi_class'Traceback (most recent call last):  File ""/var/task/lambda_function.py"", line 43, in lambda_handler    bucket, confidence = predict_bucket(key)  File ""/var/task/lambda_function.py"", line 24, in predict_bucket    probs = model.predict_proba(X)[0]  File ""/var/lang/lib/python3.10/site-packages/sklearn/linear_model/_logistic.py"", line 1457, in predict_proba    ovr = self.multi_class in [""ovr"", ""warn""] or (
+"
+1776268603473,"END RequestId: df30a65d-4b22-54b5-9cf5-c404fc538904
+"
+1776268603473,"REPORT RequestId: df30a65d-4b22-54b5-9cf5-c404fc538904	Duration: 22.12 ms	Billed Duration: 23 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+"
+1776268783461,"START RequestId: ecf5db4a-1291-5d46-84e6-b913aab0f435 Version: $LATEST
+"
+1776268783471,"Processing file: 199999993333_NA5323332333.rbackup from ml-file-router-source
+"
+1776268783471,"[ERROR] AttributeError: 'LogisticRegression' object has no attribute 'multi_class'Traceback (most recent call last):  File ""/var/task/lambda_function.py"", line 43, in lambda_handler    bucket, confidence = predict_bucket(key)  File ""/var/task/lambda_function.py"", line 24, in predict_bucket    probs = model.predict_proba(X)[0]  File ""/var/lang/lib/python3.10/site-packages/sklearn/linear_model/_logistic.py"", line 1457, in predict_proba    ovr = self.multi_class in [""ovr"", ""warn""] or (
+"
+1776268783493,"END RequestId: ecf5db4a-1291-5d46-84e6-b913aab0f435
+"
+1776268783493,"REPORT RequestId: ecf5db4a-1291-5d46-84e6-b913aab0f435	Duration: 31.05 ms	Billed Duration: 32 ms	Memory Size: 128 MB	Max Memory Used: 128 MB	
+"
