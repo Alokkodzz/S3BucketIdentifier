@@ -14,7 +14,7 @@ resource "aws_lambda_function" "router" {
   role          = var.lambda_role_arn
   package_type  = "Image"
   image_uri = "736395454781.dkr.ecr.ap-south-1.amazonaws.com/ml-file-router:latest"
-  timeout = 120
+  timeout = 30
 }
 
 resource "aws_lambda_event_source_mapping" "sqs_trigger" {
