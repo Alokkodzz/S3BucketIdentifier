@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
-    bucket = "alokk-mlopss"
+    bucket = "alokk-mlopss-tf-backend"
     key    = "State/terraform.tfstate"
-    region = "ap-southeast-2"
+    region = "ap-south-1"
   }
 }
