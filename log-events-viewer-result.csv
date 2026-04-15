@@ -1,0 +1,53 @@
+timestamp,message
+1776263230774,"/var/lang/lib/python3.10/site-packages/joblib/_multiprocessing_helpers.py:44: UserWarning: [Errno 13] Permission denied.  joblib will operate in serial mode
+"
+1776263230774,"warnings.warn(""%s.  joblib will operate in serial mode"" % (e,))
+"
+1776263240268,"INIT_REPORT Init Duration: 10001.23 ms	Phase: init	Status: timeout
+"
+1776263240550,"/var/lang/lib/python3.10/site-packages/joblib/_multiprocessing_helpers.py:44: UserWarning: [Errno 13] Permission denied.  joblib will operate in serial mode
+"
+1776263240550,"warnings.warn(""%s.  joblib will operate in serial mode"" % (e,))
+"
+1776263250889,"/var/lang/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator LogisticRegression from version 1.8.0 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+"
+1776263250889,"https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+"
+1776263250889,"warnings.warn(
+"
+1776263251069,"/var/lang/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator TfidfTransformer from version 1.8.0 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+"
+1776263251069,"https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+"
+1776263251069,"warnings.warn(
+"
+1776263251071,"/var/lang/lib/python3.10/site-packages/sklearn/base.py:442: InconsistentVersionWarning: Trying to unpickle estimator TfidfVectorizer from version 1.8.0 when using version 1.7.2. This might lead to breaking code or invalid results. Use at your own risk. For more info please refer to:
+"
+1776263251071,"https://scikit-learn.org/stable/model_persistence.html#security-maintainability-limitations
+"
+1776263251071,"warnings.warn(
+"
+1776263251113,"START RequestId: ef5883ba-35c7-5cd8-9540-e1e397ad8fa8 Version: $LATEST
+"
+1776263251130,"[ERROR] KeyError: 's3'Traceback (most recent call last):  File ""/var/task/lambda_function.py"", line 30, in lambda_handler    key = record['s3']['object']['key']
+"
+1776263251150,"END RequestId: ef5883ba-35c7-5cd8-9540-e1e397ad8fa8
+"
+1776263251150,"REPORT RequestId: ef5883ba-35c7-5cd8-9540-e1e397ad8fa8	Duration: 10866.62 ms	Billed Duration: 10867 ms	Memory Size: 128 MB	Max Memory Used: 127 MB	
+"
+1776263259819,"START RequestId: d5cbed84-fa7d-5315-8745-8fdd58ef4845 Version: $LATEST
+"
+1776263259819,"[ERROR] KeyError: 's3'Traceback (most recent call last):  File ""/var/task/lambda_function.py"", line 30, in lambda_handler    key = record['s3']['object']['key']
+"
+1776263259821,"END RequestId: d5cbed84-fa7d-5315-8745-8fdd58ef4845
+"
+1776263259821,"REPORT RequestId: d5cbed84-fa7d-5315-8745-8fdd58ef4845	Duration: 1.59 ms	Billed Duration: 2 ms	Memory Size: 128 MB	Max Memory Used: 127 MB	
+"
+1776263289820,"START RequestId: 10c53d64-e474-59b4-9e9e-5f3d46d28ec6 Version: $LATEST
+"
+1776263289820,"[ERROR] KeyError: 's3'Traceback (most recent call last):  File ""/var/task/lambda_function.py"", line 30, in lambda_handler    key = record['s3']['object']['key']
+"
+1776263289828,"END RequestId: 10c53d64-e474-59b4-9e9e-5f3d46d28ec6
+"
+1776263289828,"REPORT RequestId: 10c53d64-e474-59b4-9e9e-5f3d46d28ec6	Duration: 2.22 ms	Billed Duration: 3 ms	Memory Size: 128 MB	Max Memory Used: 127 MB	
+"
