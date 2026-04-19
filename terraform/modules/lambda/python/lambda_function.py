@@ -17,7 +17,7 @@ download_model()
 model = joblib.load('/tmp/model.joblib')
 vectorizer = joblib.load('/tmp/vectorizer.joblib')
 
-CONFIDENCE_THRESHOLD = 0.7
+CONFIDENCE_THRESHOLD = 0.1
 
 def predict_bucket(filename):
     X = vectorizer.transform([filename])
