@@ -41,5 +41,5 @@ jobs:
 
       - name: Upload model to S3
         run: |
-          aws s3 cp model/model.joblib s3://ml-model-bucket-alok/model.joblib
-          aws s3 cp model/vectorizer.joblib s3://ml-model-bucket-alok/vectorizer.joblib
+          aws s3 cp model/model.pkl s3://ml-model-bucket-alok/model.pkl
+          aws s3 cp model/vectorizer.pkl s3://ml-model-bucket-alok/vectorizer.pkl
