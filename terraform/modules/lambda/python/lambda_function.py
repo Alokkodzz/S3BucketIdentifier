@@ -8,14 +8,14 @@ s3 = boto3.client('s3')
 MODEL_BUCKET = "ml-model-bucket-alok"
 
 def download_model():
-    if not os.path.exists("/tmp/model.joblib"):
-        s3.download_file(MODEL_BUCKET, "model.joblib", "/tmp/model.joblib")
-        s3.download_file(MODEL_BUCKET, "vectorizer.joblib", "/tmp/vectorizer.joblib")
+    if not os.path.exists("/tmp/model.pkl"):
+        s3.download_file(MODEL_BUCKET, "model.pkl", "/tmp/model.pkl")
+        s3.download_file(MODEL_BUCKET, "vectorizer.pkl", "/tmp/vectorizer.pkl")
 
 download_model()
 
-model = joblib.load('/tmp/model.joblib')
-vectorizer = joblib.load('/tmp/vectorizer.joblib')
+model = joblib.load('/tmp/model.pkl')
+vectorizer = joblib.load('/tmp/vectorizer.pkl')
 
 CONFIDENCE_THRESHOLD = 0.1
 
